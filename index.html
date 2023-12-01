@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background: #000000;
+            color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- v-once v-on: click dblclick mousemove modefaynes submit -->
+    <div id="app">
+        <!-- <h1> {{name}} </h1>
+        <button v-on:dblclick="onchange()">Buni bosing</button> 
+        <!-- <h1 v-once> {{name}} </h1>
+        {{update()}} -->
+        <button v-on:click="onchange()">Buni bosing</button>
+        <div class="box" v-on:mousemove="getkor()">
+            Lorem, ipsum dolor.
+            <p> x: {{x}} </p>
+            <p> y: {{y}} </p>
+        </div>
+        <h1> {{name}} </h1>
+        <button v-on:click.left="changeName('lola',$event)">Buni bosing</button>
+        <form action="#" v-on:submit="prevent">
+            <input type="text" v-on:keyup.a="showevent">
+            <button type="submit">Submit</button>
+            <h1 v-if="(kiritish%3===0)&&(kiritish%5===0)"> Fizzbuzz</h1>
+            <h1 v-else-if="kiritish%3===0">fizz</h1>
+            <h1 v-else-if="kiritish%5===0">Bazz</h1>
+
+
+            <h1 v-else>kiritinff</h1>
+            <!-- <button v-on:click="fizzbazz">Buni bosing</button> -->
+
+        </form>
+    </div>
+
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                name: 'hulkar',
+                x: 0,
+                y: 0,
+                kiritish: 30
+
+            },
+            // methods: {
+            //     update() {
+            //         setTimeout(() => {
+            //             this.name = 'lola'
+            //         }, 3000)
+            //     }
+            // },
+            methods: {
+                onchange() {
+                    this.name = "Munisa"
+
+                },
+                // getkor(event) {
+                //     this.x = event.clientX;
+                //     this.y = event.clientY;
+
+                // },
+                // changeName(value, $event) {
+                //     this.name = value;
+                //     console.log($event);
+                // },
+                // prevent(event) {
+                //     event.preventDefault();
+                //     console.log('prevet funksiyasi bajarildi')
+                // },
+                // showevent(event) {
+                //     console.log(event.target.value);
+                // },
+                // fizzbazz() {
+                //     if ((kiritish % 3 === 0) && (kiritish % 5 === 0)) {
+                //         console.log('Fizzbazz');
+                //     }
+                // }
+            },
+        })
+    </script>
+</body>
+
+</html>
